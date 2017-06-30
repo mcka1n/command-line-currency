@@ -1,3 +1,5 @@
+load 'lib/command_line_currency/currencylayer.rb'
+
 module CommandLineCurrency
   class Operator
 
@@ -30,6 +32,19 @@ module CommandLineCurrency
       end
 
       amount_converted
+    end
+
+    def self.best_exchange_rate(source_currency, target_currency)
+      rates_per_day = {}
+      Date.today.downto(Date.today - 7) do |date|
+        rates = self.exchange_rate(source_currency, target_currency, date)
+        rates_per_day[date.to_s] = rates.first.last      # rate per day
+      end
+
+      # Check the highest rate per day
+      sorted_rates = rates_per_day.sort_by {|k,v| v}.reverse
+
+      sorted_rates.first
     end
   end
 end
