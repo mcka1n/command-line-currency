@@ -1,5 +1,9 @@
 # Command Line Currency
 
+This is a simple tool to check currency rates, it uses the free plan from the https://currencylayer.com
+
+Note: There is an API rate of 1000 for these free plans.
+
 # First things first ...
 
 In order to run the command line currency operator we need to set the correct
@@ -17,7 +21,7 @@ CommandLineCurrency::Operator.exchange_rate('MXN', 'USD, EUR, CAD')
 ```
 
 **Response**
-````
+```
 => {:MXNUSD=>0.05541363200837677, :MXNEUR=>0.04856461791940542, :MXNCAD=>0.07198114429260925, :MXNMXN=>1.0}
 ```
 
@@ -29,13 +33,15 @@ CommandLineCurrency::Operator.convert_amount_to('MXN', 'USD, EUR, CAD', nil, 35)
 ```
 
 **Response**
-````
+```
 => {:MXNUSD=>1.9413168751077086, :MXNEUR=>1.7013778746118962, :MXNCAD=>2.520897028171115, :MXNMXN=>35.0}
 ```
 
 ### Get the highest exchange rate for a currency in the last 7 days
-
-`CommandLineCurrency::Operator.best_exchange_rate('MXN','EUR')`
-
-Response:
-["2017-06-26", 0.04991719477182177]`
+```
+CommandLineCurrency::Operator.best_exchange_rate('MXN','EUR')
+```
+**Response:**
+```
+["2017-06-26", 0.04991719477182177]
+```
