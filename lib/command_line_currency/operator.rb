@@ -89,7 +89,6 @@ module CommandLineCurrency
         end
 
         # Note: The Currency API works with dates <= to the last 16 years.
-        # if y.to_i < Date.today.year - 16
         date_string = Date.parse(date_string)
         base_accepted_date = Date.today.year - 16
         if !date_string.between?(Date.parse("#{base_accepted_date}-01-01"), Date.today)
