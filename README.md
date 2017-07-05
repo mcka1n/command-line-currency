@@ -20,35 +20,70 @@ environment variables in the `.env` file.
 
 ## How to use it?
 
+Make sure you are in the project directory
+
+    cd ~/<your-path>/command-line-currency
+
 ### Exchange rate
 
-**Request**
-```
-CommandLineCurrency::Operator.exchange_rate('MXN', 'USD, EUR, CAD')
+In order to get an exchange rate from a source currency into a target currency, you need to provide the following arguments:
+
+**required arguments**
+
+- -s (source_currency)
+- -t (target_currencies; GTM,USD,GBP,EUR)
+
+**optional arguments**
+- -d (date, in the YYYY-MM-DD format)
+
+**Example request**
+```shell
+ruby command_line_currency.rb exchange_rate -s USD -t USD,MXN,EUR
 ```
 
 **Response**
 ```
-=> {:MXNUSD=>0.05541363200837677, :MXNEUR=>0.04856461791940542, :MXNCAD=>0.07198114429260925, :MXNMXN=>1.0}
+Running exchange_rate on options {:source_currency=>"USD", :target_currencies=>["USD", "MXN", "EUR"]}
+{:USDUSD=>1, :USDMXN=>18.3564, :USDEUR=>0.882499}
 ```
 
 ### Convert amount from source to multiple targets
 
-**Request**
-```
-CommandLineCurrency::Operator.convert_amount_to('MXN', 'USD, EUR, CAD', nil, 35)
+**required arguments**
+
+- -s (source_currency)
+- -t (target_currencies; GTM,USD,GBP,EUR)
+- -a (amount)
+
+**optional arguments**
+- -d (date, in the YYYY-MM-DD format)
+
+
+**Example request**
+```shell
+ruby command_line_currency.rb convert_amount_to -s GTQ -t EUR,USD,GBP -a 300.99 -d 2017-07-05
 ```
 
 **Response**
 ```
-=> {:MXNUSD=>1.9413168751077086, :MXNEUR=>1.7013778746118962, :MXNCAD=>2.520897028171115, :MXNMXN=>35.0}
+Running convert_amount_to on options {:source_currency=>"GTQ", :target_currencies=>["EUR", "USD", "GBP"], :amount=>"300.99", :date=>"2017-07-05"}
+{:GTQEUR=>36.2206597381743, :GTQUSD=>41.05724415712816, :GTQGBP=>31.77091667366891, :GTQGTQ=>300.99}
 ```
 
 ### Get the highest exchange rate for a currency in the last 7 days
+
+**required arguments**
+
+- -s (source_currency: GBP)
+- -t (target_currency: EUR)
+
+**Example request**
 ```
-CommandLineCurrency::Operator.best_exchange_rate('MXN','EUR')
+ruby command_line_currency.rb best_exchange_rate -s USD -t EUR
 ```
 **Response:**
 ```
-["2017-06-26", 0.04991719477182177]
+Running best_exchange_rate on options {:source_currency=>"USD", :target_currencies=>["EUR"]}
+2017-07-05
+0.882201
 ```

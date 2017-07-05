@@ -68,7 +68,7 @@ module CommandLineCurrency
 
       rates_per_day = {}
       Date.today.downto(Date.today - 7) do |date|
-        rates = self.exchange_rate(source_currency, target_currency, date)
+        rates = self.exchange_rate(source_currency, target_currency, date.to_s)
         rates_per_day[date.to_s] = rates.first.last      # rate per day
       end
 
