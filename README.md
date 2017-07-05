@@ -1,6 +1,6 @@
 # Command Line Currency
 
-This is a simple tool to check currency rates, it uses the free plan from the https://currencylayer.com
+This is a simple command line tool to check currency rates, it uses the free plan from the https://currencylayer.com
 
 Note: There is an API rate of 1000 for these free plans.
 
@@ -23,6 +23,15 @@ environment variables in the `.env` file.
 Make sure you are in the project directory
 
     cd ~/<your-path>/command-line-currency
+    
+
+These are the things you can do:
+
+  - [Get an exchange rate](#exchange-rate)
+  - [Convert an amount from source to target currencies](#convert-amount-from-source-to-multiple-targets)
+  - [Get the highest exchange rate in the last 7 days](#get-the-highest-exchange-rate-for-a-currency-in-the-last-7-days)
+  - [Send the output via SMS](#sending-the-output-via-sms)
+  - [Get help](#get-help)
 
 ### Exchange rate
 
@@ -90,7 +99,7 @@ Running best_exchange_rate on options {:source_currency=>"USD", :target_currenci
 
 ## Get help
 
-**Run: **
+**Run**
 
 ```
 ruby command_line_currency.rb best_exchange_rate -h
