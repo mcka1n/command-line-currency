@@ -127,3 +127,7 @@ Example:
 ```
 ruby command_line_currency.rb exchange_rate -s USD -t USD,MXN,EUR -o +49xxxxxxxxxx
 ```
+
+**Output:**
+
+<img src="https://www.dropbox.com/s/yc3xekije0dfxnq/sms-example.png?dl=1" height="300" />
