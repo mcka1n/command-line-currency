@@ -87,3 +87,43 @@ Running best_exchange_rate on options {:source_currency=>"USD", :target_currenci
 2017-07-05
 0.882201
 ```
+
+## Get help
+
+**Run: **
+
+```
+ruby command_line_currency.rb best_exchange_rate -h
+```
+
+**Response**
+```
+Usage: command_line_currency.rb COMMAND [OPTIONS]
+
+Commands
+     exchange_rate: Get the exchange rate of source_currency to N target_currencies using an optional specific_date
+     convert_amount_to: Convert an amount from a source_currency to N target_currencies in an optional specific_date
+     best_exchange_rate: Get the best exchange rate from a source_currency to a target_currency in the last 7 days
+
+Options
+    -s, --source_currency SOURCE     source currency to operate
+    -t USD,GBP,MXN,                  target currencies to operate
+        --target_currencies
+    -d, --date DATE                  specific date to operate (YYYY-MM-DD)
+    -a, --amount AMOUNT              specific amount to operate
+    -o, --output PHONE_NUMBER        send output to phone-number via SMS (no spaces)
+    -h, --help                       help
+```
+
+----
+
+## Sending the output via SMS
+
+You can use the optional `-o` flag to send a SMS to a phone number,
+you will need to provide some auth keys to the `.env` file.
+
+Example:
+
+```
+ruby command_line_currency.rb exchange_rate -s USD -t USD,MXN,EUR -o +49xxxxxxxxxx
+```
