@@ -44,7 +44,7 @@ In order to get an exchange rate from a source currency into a target currency, 
 **required arguments**
 
 - -s (source_currency)
-- -t (target_currencies; GTM,USD,GBP,EUR)
+- -t (target_currencies; GTQ,USD,GBP,EUR)
 
 **optional arguments**
 - -d (date, in the YYYY-MM-DD format)
@@ -65,7 +65,7 @@ Running exchange_rate on options {:source_currency=>"USD", :target_currencies=>[
 **required arguments**
 
 - -s (source_currency)
-- -t (target_currencies; GTM,USD,GBP,EUR)
+- -t (target_currencies; GTQ,USD,GBP,EUR)
 - -a (amount)
 
 **optional arguments**
