@@ -6,6 +6,13 @@ Note: There is an API rate of 1000 for these free plans.
 
 # First things first ...
 
+
+Let's install the Gems for this project, run:
+
+```
+ bundle install
+```
+
 In order to run the command line currency operator we need to set the correct
 environment variables in the `.env` file.
 
