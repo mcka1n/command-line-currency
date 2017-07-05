@@ -13,10 +13,14 @@ Let's install the Gems for this project, run:
  bundle install
 ```
 
-In order to run the command line currency operator we need to set the correct
+In order to run the command line currency we need to set the correct
 environment variables in the `.env` file.
 
-- There is a .env.sample so we can easily make our new `.env`
+There is a `.env.sample` already in this repository, so we can easily make our new `.env`. Use the following command to create your `.env` based on `.env.sample`:
+
+    cp .env.sample .env
+    
+Now make sure to fill the content with your real credentials.
 
 ## How to use it?
 
