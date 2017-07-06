@@ -6,7 +6,6 @@ Note: There is an API rate of 1000 for these free plans.
 
 # First things first ...
 
-
 Let's install the Gems for this project, run:
 
 ```
@@ -19,7 +18,7 @@ environment variables in the `.env` file.
 There is a `.env.sample` already in this repository, so we can easily make our new `.env`. Use the following command to create your `.env` based on `.env.sample`:
 
     cp .env.sample .env
-    
+
 Now make sure to fill the content with your real credentials.
 
 ## How to use it?
@@ -27,7 +26,7 @@ Now make sure to fill the content with your real credentials.
 Make sure you are in the project directory
 
     cd ~/<your-path>/command-line-currency
-    
+
 
 These are the things you can do:
 
@@ -135,6 +134,12 @@ Options
 You can use the optional `-o` flag to send a SMS to a phone number,
 you will need to provide some auth keys to the `.env` file.
 
+Note: The phone number should be in the format of::
+
+```ruby
++(area_code)(phone_number)  # without spaces or dashes
+```
+
 Example:
 
 ```
@@ -143,4 +148,4 @@ ruby command_line_currency.rb exchange_rate -s USD -t USD,MXN,EUR -o +49xxxxxxxx
 
 **Output:**
 
-<img src="https://www.dropbox.com/s/yc3xekije0dfxnq/sms-example.png?dl=1" height="300" />
+![Kiku](screenshots/sms-example.png)
